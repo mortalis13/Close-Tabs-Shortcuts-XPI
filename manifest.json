@@ -1,0 +1,29 @@
+{
+  "name": "Close Tabs Shortcuts",
+  "version": "1.1.5",
+  "description": "Adds keyboard shortcuts for closing all not active tabs, all to the left of the active one, all to the right",
+  
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["utils.js", "background.js"]
+  },
+
+  "commands": {
+    "close-other-tabs": {
+      "suggested_key": { "default": "Alt+W" },
+      "description": "Close Other Tabs"
+    },
+    "close-left-tabs": {
+      "suggested_key": { "default": "Alt+Shift+F1" },
+      "description": "Close Left Tabs"
+    },
+    "close-right-tabs": {
+      "suggested_key": { "default": "Alt+Shift+F2" },
+      "description": "Close Right Tabs"
+    }
+  },
+  
+  "permissions": [
+    "tabs"
+  ]
+}
