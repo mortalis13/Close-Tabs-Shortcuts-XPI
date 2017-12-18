@@ -4,7 +4,7 @@ browser.commands.onCommand.addListener(command => closeTabs(command));
 // ----------------------------------------------------
 
 async function closeTabs(commandId) {
-  var tabs = await browser.tabs.query({});
+  var tabs = await browser.tabs.query({currentWindow: true});
   var activeTab = await getActiveTab();
   
   var removeIds = [];
