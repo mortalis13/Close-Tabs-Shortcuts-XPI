@@ -11,13 +11,13 @@ async function closeTabs(commandId) {
   
   switch(commandId) {
     case 'close-other-tabs':
-      removeIds = tabs.filter(tab => !tab.active).map(tab => tab.id);
+      removeIds = tabs.filter(tab => !tab.active && !tab.pinned).map(tab => tab.id);
       break;
     case 'close-left-tabs':
-      removeIds = tabs.filter(tab => tab.index < activeTab.index).map(tab => tab.id);
+      removeIds = tabs.filter(tab => !tab.pinned && (tab.index < activeTab.index)).map(tab => tab.id);
       break;
     case 'close-right-tabs':
-      removeIds = tabs.filter(tab => tab.index > activeTab.index).map(tab => tab.id);
+      removeIds = tabs.filter(tab => !tab.pinned && (tab.index > activeTab.index)).map(tab => tab.id);
       break;
   }
   
